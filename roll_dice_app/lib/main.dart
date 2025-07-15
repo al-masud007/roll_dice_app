@@ -1,40 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:roll_dice_app/gradiant_container.dart';
 
 void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: GradientContainer(),
+        body: GradientContainer(
+          gradientColors: [
+            Color.fromARGB(255, 26, 2, 8),
+            Color.fromARGB(199, 45, 7, 98),
+          ],
+        ),
       ),
     ),
   );
-}
-
-class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
-
-  @override
-  Widget build(context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 91, 58, 183),
-            Color.fromARGB(199, 84, 152, 192)
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: const Center(
-        child: Text(
-          'this is just the begining',
-          style: TextStyle(
-            fontSize: 28,
-            color: Colors.white,
-          ),
-        ),
-      ),
-    );
-  }
 }
